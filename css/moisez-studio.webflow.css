@@ -1390,7 +1390,7 @@
     background-color: #0000;
   }
 
-  .homeproject.w100.borderfix, .homeproject.w100.borderfix._2, .homeproject.w100.borderfix._4 {
+  .homeproject.w100.borderfix, .homeproject.w100.borderfix._2, .homeproject.w100.borderfix._2.left, .homeproject.w100.borderfix._4 {
     border-style: solid;
   }
 
