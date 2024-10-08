@@ -258,6 +258,8 @@
 
 .h2title {
   text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 0;
   font-size: 92px;
   font-weight: 700;
   line-height: 104px;
@@ -347,7 +349,7 @@
 }
 
 .homeprojectphoto {
-  border: 2px solid #1e1e1e;
+  border: 2px #1e1e1e;
   width: 100%;
   height: 500px;
   padding: 32px;
@@ -373,7 +375,7 @@
 
 .homeprojectphoto.stream {
   background-image: url('../images/stream-uy-1.webp');
-  background-position: 0 0;
+  background-position: 90% 0;
   background-size: cover;
 }
 
@@ -523,18 +525,24 @@
 }
 
 .img-grow {
+  max-width: 1196px;
   max-height: 1200px;
 }
 
+.img-grow.f1 {
+  max-width: 100%;
+}
+
 .img33 {
-  width: 100%;
+  width: 30%;
 }
 
 .imgcontainer {
   grid-column-gap: 64px;
   grid-row-gap: 64px;
-  flex-flow: wrap;
+  flex-flow: row;
   width: 100%;
+  height: 940px;
   display: flex;
 }
 
@@ -552,7 +560,11 @@
   align-items: stretch;
 }
 
-.img75, .img50 {
+.img75 {
+  width: 75%;
+}
+
+.img50 {
   width: 100%;
 }
 
@@ -869,7 +881,7 @@
 }
 
 .loader {
-  z-index: 1000;
+  z-index: 9999;
   color: #fff7f7;
   background-color: #1e1e1e;
   flex-direction: column;
@@ -1150,7 +1162,31 @@
   display: flex;
 }
 
+.cursor-wrapper {
+  z-index: 9998;
+  opacity: 0;
+  mix-blend-mode: difference;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  transition: opacity .35s;
+  display: flex;
+  position: fixed;
+}
+
+.cursor {
+  background-color: #fff;
+  border-radius: 100%;
+  width: 32px;
+  height: 32px;
+}
+
 @media screen and (min-width: 1920px) {
+  .container {
+    max-width: 1800px;
+  }
+
   .testnav, .homemainsection, .homemainsection.contactsection, .section {
     padding-left: 0;
     padding-right: 0;
@@ -1208,6 +1244,7 @@
   }
 
   .navbar {
+    max-width: 1800px;
     padding-left: 0;
     padding-right: 0;
   }
@@ -1295,6 +1332,8 @@
   }
 
   .section {
+    grid-column-gap: 32px;
+    grid-row-gap: 32px;
     padding: 32px 0;
   }
 
@@ -1313,12 +1352,19 @@
     overflow: hidden;
   }
 
+  .section.projectshome {
+    grid-column-gap: 32px;
+    grid-row-gap: 32px;
+  }
+
   .h2title {
     font-size: 56px;
     line-height: 62px;
   }
 
   .flex-block-4 {
+    grid-column-gap: 32px;
+    grid-row-gap: 32px;
     flex-flow: wrap;
   }
 
@@ -1355,6 +1401,15 @@
   .homeproject.w50.bordertopfix {
     border-style: solid;
     width: 100%;
+  }
+
+  .homeprojectphoto {
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+
+  .homeprojectphoto.inzone {
+    background-position: 60%;
   }
 
   .homeprojectphoto.stream {
@@ -1406,11 +1461,17 @@
     flex-flow: wrap;
   }
 
+  .img-grow {
+    max-width: 100%;
+  }
+
   .img33 {
     width: 100%;
   }
 
   .imgcontainer {
+    grid-column-gap: 32px;
+    grid-row-gap: 32px;
     flex-flow: wrap;
     height: auto;
   }
@@ -1542,6 +1603,10 @@
     opacity: .5;
     position: absolute;
   }
+
+  .cursor-wrapper {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -1584,6 +1649,11 @@
     letter-spacing: -2px;
     font-size: 48px;
     line-height: 64px;
+  }
+
+  .section {
+    grid-column-gap: 32px;
+    grid-row-gap: 32px;
   }
 
   .h2title {
@@ -1822,6 +1892,11 @@
     line-height: 24px;
   }
 
+  .flex-block-2, .section {
+    grid-column-gap: 32px;
+    grid-row-gap: 32px;
+  }
+
   .section.abstract {
     grid-column-gap: 16px;
     grid-row-gap: 16px;
@@ -1829,9 +1904,19 @@
     padding-bottom: 48px;
   }
 
+  .section.projectshome {
+    grid-column-gap: 32px;
+    grid-row-gap: 32px;
+  }
+
   .h2title {
     font-size: 32px;
     line-height: 40px;
+  }
+
+  .flex-block-4 {
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
   }
 
   .box-w66.gap-32 {
@@ -1841,10 +1926,17 @@
 
   .homeprojectphoto {
     flex-flow: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    height: 350px;
   }
 
   .homeprojectphoto.multas {
     background-position: 50%;
+  }
+
+  .homeprojectphoto.stream {
+    background-position: 93%;
   }
 
   .categorypill {
@@ -1874,6 +1966,15 @@
 
   .link-block {
     display: none;
+  }
+
+  .img33.png {
+    max-height: 300px;
+  }
+
+  .imgcontainer {
+    grid-column-gap: 32px;
+    grid-row-gap: 32px;
   }
 
   .buttoncontainer {
@@ -1930,6 +2031,10 @@
 
   .image-2 {
     height: auto;
+  }
+
+  .img-wide {
+    height: 150px;
   }
 }
 

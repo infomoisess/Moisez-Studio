@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--  Last Published: Tue Oct 08 2024 03:27:06 GMT+0000 (Coordinated Universal Time)  -->
 <html
   data-wf-page="6702aa517d583a0d54b55e55"
   data-wf-site="67009b49b83ab0f475f22acd"
@@ -70,6 +71,9 @@
     <link href="../images/webclip.png" rel="apple-touch-icon" />
   </head>
   <body class="body">
+    <div class="cursor-wrapper">
+      <div class="cursor"></div>
+    </div>
     <div class="w-layout-blockcontainer container w-container">
       <div
         data-animation="default"
@@ -281,7 +285,7 @@
           loading="lazy"
           width="Auto"
           alt="F1 1"
-          class="img-grow"
+          class="img-grow f1"
         />
         <div class="imgcontainer">
           <img
@@ -295,7 +299,7 @@
           <img
             src="../images/f1-3.webp"
             loading="lazy"
-            sizes="(max-width: 479px) 93vw, (max-width: 767px) 92vw, (max-width: 991px) 94vw, (max-width: 1919px) 93vw, 1440px"
+            sizes="(max-width: 479px) 93vw, (max-width: 767px) 92vw, (max-width: 991px) 94vw, (max-width: 1919px) 70vw, 1350px"
             srcset="
               ../images/f1-3-p-500.webp   500w,
               ../images/f1-3-p-800.webp   800w,
@@ -426,7 +430,8 @@
       .img-grow,
       .img75,
       .img33,
-      .img25 {
+      .img25,
+      .img-wide {
         object-fit: cover;
         height: 100%;
       }
@@ -435,6 +440,12 @@
       }
       .nav-menu {
         backdrop-filter: saturate(180%) blur(20px);
+      }
+      body:hover .cursor-wrapper {
+        opacity: 1;
+      }
+      .cursor-wrapper {
+        pointer-events: none;
       }
     </style>
     <style>
